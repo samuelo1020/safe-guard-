@@ -94,6 +94,7 @@ class _LoginPageState extends State<LoginPage> {
                           padding:  EdgeInsets.only(left:20.0),
                           child: TextField( 
                             obscureText: true,
+                            
                             decoration: InputDecoration(
                              border: InputBorder.none,
                              hintText:"password",
