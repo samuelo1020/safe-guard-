@@ -40,7 +40,7 @@ class _LoginPageState extends State<LoginPage> {
 
                   //hello text
                   Text(
-                    "Hola de nuevo",
+                    "Safe guard",
                     style: GoogleFonts.bebasNeue(
                       fontSize: 48,
                       color: const Color(0xff222831),
