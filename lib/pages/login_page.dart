@@ -1,7 +1,9 @@
-import "package:flutter/cupertino.dart";
-import "package:flutter/material.dart";
-import "package:flutter/widgets.dart";
-import "package:google_fonts/google_fonts.dart";
+
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:safeguard/Widget/button_widget.dart';
+import 'package:safeguard/pages/menu_page.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -16,12 +18,16 @@ class _LoginPageState extends State<LoginPage> {
     return Scaffold(
       body: Container(
         decoration: const BoxDecoration(
-          gradient: LinearGradient(colors: <Color>[
-            Color(0xff5356FF),
-            Color(0xff378CE7),
-            Color(0xff67C6E3),
-            Color(0xffDFF5FF),
-          ], begin: Alignment.topLeft, end: Alignment.bottomRight),
+          gradient: LinearGradient(
+            colors: <Color>[
+              Color(0xff5356FF),
+              Color(0xff378CE7),
+              Color(0xff67C6E3),
+              Color(0xffDFF5FF),
+            ],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+          ),
         ),
         child: SafeArea(
           child: Center(
@@ -34,11 +40,9 @@ class _LoginPageState extends State<LoginPage> {
                     size: 100,
                     color: Color(0xffFFF7FC),
                   ),
-                  const SizedBox(
-                    height: 20,
-                  ),
+                  const SizedBox(height: 20),
 
-                  //hello text
+                  // hello text
                   Text(
                     "Safe guard",
                     style: GoogleFonts.bebasNeue(
@@ -56,17 +60,18 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                   ),
                   const SizedBox(height: 30),
-                  //email textedfield
+                  // email textfield
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 20.0),
                     child: Container(
                       decoration: BoxDecoration(
-                          color: const Color(0xff67C6E3),
-                          border: Border.all(
-                            color: const Color(0xffFFF7FC),
-                          ),
-                          borderRadius: BorderRadius.circular(15)),
-                      child: Padding(
+                        color: const Color(0xff67C6E3),
+                        border: Border.all(
+                          color: const Color(0xffFFF7FC),
+                        ),
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                      child: const Padding(
                         padding: EdgeInsets.only(left: 20.0),
                         child: TextField(
                           decoration: InputDecoration(
@@ -79,17 +84,18 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                   const SizedBox(height: 10),
 
-                  //password textfield
+                  // password textfield
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 20.0),
                     child: Container(
                       decoration: BoxDecoration(
-                          color: const Color(0xff67C6E3),
-                          border: Border.all(
-                            color: const Color(0xffFFF7FC),
-                          ),
-                          borderRadius: BorderRadius.circular(15)),
-                      child: Padding(
+                        color: const Color(0xff67C6E3),
+                        border: Border.all(
+                          color: const Color(0xffFFF7FC),
+                        ),
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                      child: const Padding(
                         padding: EdgeInsets.only(left: 20.0),
                         child: TextField(
                           obscureText: true,
@@ -103,30 +109,29 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                   const SizedBox(height: 20),
 
-                  //sign in buttom
+                  // sign in button
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 25.0),
                     child: Container(
-                      padding: EdgeInsets.all(29),
+                      padding: const EdgeInsets.all(29),
                       decoration: BoxDecoration(
-                        color: Color(0xff00224D),
+                        color: const Color(0xff00224D),
                         borderRadius: BorderRadius.circular(12),
                       ),
-                      child: const Center(
-                        child: Text(
-                          "Sign In",
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 16,
-                          ),
+                      child: Center(
+                        child: ButtonWidget(
+                          text: "Sign In",
+                          onClicked: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => MyHomePage()),
+                          ), key: Key('signInButton') ,
                         ),
                       ),
                     ),
                   ),
                   const SizedBox(height: 25),
 
-                  //not member
+                  // not member
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: const [
@@ -138,10 +143,11 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                       ),
                       Text(
-                        "Rgistrese",
+                        "Registrese",
                         style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            color: Color(0xffFFF7FC)),
+                          fontWeight: FontWeight.bold,
+                          color: Color(0xffFFF7FC),
+                        ),
                       ),
                     ],
                   ),
@@ -154,4 +160,5 @@ class _LoginPageState extends State<LoginPage> {
       ),
     );
   }
-} 
+}
+
